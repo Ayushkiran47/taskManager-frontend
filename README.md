@@ -30,7 +30,7 @@ contract TaskManager {
     mapping(address => Assignment[]) private assignmentsByUser;
 
     function addAssignment(string memory _description, uint _dueDate) public {
-        if (bytes(_description).length == 0) {
+        if (bytes(_description).length <= 5) {
             revert("Assignment description cannot be empty");
         }
 
